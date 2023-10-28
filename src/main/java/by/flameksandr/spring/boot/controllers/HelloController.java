@@ -1,6 +1,8 @@
 package by.flameksandr.spring.boot.controllers;
 
 import by.flameksandr.spring.boot.dto.Person;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -33,5 +35,10 @@ public class HelloController {
         Person person2 = new Person();
         person2.setName("Jessika");
         return Arrays.asList(person1, person2);
+    }
+
+    @GetMapping("/statustest")
+    public void statusTest(HttpServletResponse response){
+        response.setStatus(HttpServletResponse.SC_NO_CONTENT);
     }
 }
