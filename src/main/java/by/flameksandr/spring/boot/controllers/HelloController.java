@@ -28,8 +28,10 @@ public class HelloController {
 
     @GetMapping("/getall")
     public List<Person> getAllPersons() {
-        Person person = new Person();
-        person.setName("Patrick");
-        return Arrays.asList(person);
+        Person person1 = new Person();
+        person1.setName("Patrick");
+        Person person2 = new Person();
+        person2.setName("Jessika");
+        return Arrays.asList(person1, person2);
     }
 }
