@@ -3,6 +3,9 @@ package by.flameksandr.spring.boot.controllers;
 import by.flameksandr.spring.boot.dto.Person;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 @RestController
 public class HelloController {
 
@@ -21,5 +24,12 @@ public class HelloController {
         Person person = new Person();
         person.setName("Patrick");
         return person;
+    }
+
+    @GetMapping("/getall")
+    public List<Person> getAllPersons() {
+        Person person = new Person();
+        person.setName("Patrick");
+        return Arrays.asList(person);
     }
 }
