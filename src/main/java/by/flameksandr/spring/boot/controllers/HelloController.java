@@ -1,7 +1,6 @@
 package by.flameksandr.spring.boot.controllers;
 
 import by.flameksandr.spring.boot.dto.Person;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,7 +37,10 @@ public class HelloController {
     }
 
     @GetMapping("/statustest")
-    public void statusTest(HttpServletResponse response){
-        response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+    public Person statusTest(HttpServletResponse response) {
+        Person person1 = new Person();
+        person1.setName("Patrick");
+        response.setStatus(HttpServletResponse.SC_ACCEPTED);
+        return person1;
     }
 }
