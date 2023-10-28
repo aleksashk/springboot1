@@ -11,8 +11,15 @@ public class HelloController {
         return "Hello " + name + "!";
     }
 
-    @PostMapping(path="/goodbye")
-    public String goodbye(@RequestBody Person p){
+    @PostMapping(path = "/goodbye")
+    public String goodbye(@RequestBody Person p) {
         return "Goodbye, " + p.getName() + "!";
+    }
+
+    @GetMapping("/get")
+    public Person getPerson() {
+        Person person = new Person();
+        person.setName("Patrick");
+        return person;
     }
 }
